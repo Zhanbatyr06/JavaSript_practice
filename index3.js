@@ -1,10 +1,9 @@
-function sumTriple(x, y){
-    if( x== y){
-        return 3 * (x+y)
-    }else{
-        return (x+y)
-    }
+ function leapyear(year) {
+    return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 }
 
-console.log(sumTriple(10, 20))
-console.log(sumTriple(10, 10))
+console.log(leapyear(2016));
+console.log(leapyear(2000)); 
+console.log(leapyear(1700)); 
+console.log(leapyear(1800)); 
+console.log(leapyear(100));  

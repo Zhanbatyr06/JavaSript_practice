@@ -1,10 +1,12 @@
-function first_half(str){
-    if(str.length % 2 == 0){
-        return str.slice(0, str.length / 2)
-    }
-    return str;
-}
-
-console.log(first_half("Python"));
- console.log(first_half("JavaScript"));
- console.log(first_half("PHP")); 
+function remove_character(str, char_pos) {
+    part1 = str.substring(0, char_pos);
+    part2 = str.substring(char_pos + 1, str.length);
+    return (part1 + part2);
+  }
+  
+  console.log(remove_character("Python", 0));
+  
+  console.log(remove_character("Python", 3));
+  
+  console.log(remove_character("Python", 5)); 
+  

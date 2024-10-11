@@ -1,24 +1,11 @@
-function near_100(x, y){
-    if(x != y){
-    x1 = Math.abs(x - 100)
+console.log('--------------------');
 
-    y1 = Math.abs(y - 100)
+for (var year = 2014; year <= 2050; year++) {
+    var d = new Date(year, 0, 1);
 
-    if(x1 < y1){
-        return x
-    }
-
-    if(y1 < x1){
-        return y
-    }
-
-    return 0; 
-}
-    else{
-        return false;
+    if (d.getDay() === 0) {
+        console.log("1st January is being a Sunday  " + year);
     }
 }
 
-console.log(near_100(90, 89));
- console.log(near_100(-90, -89));
- console.log (near_100(90, 90)); 
+console.log('--------------------'); 

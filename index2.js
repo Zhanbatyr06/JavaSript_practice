@@ -1,19 +1,37 @@
-function max_value(x, y, z){
-    let max_val = 0;
+var today = new Date();
 
-    if(x>y){
-        max_val = x;
-    }else{
-        max_val = y
+var day = today.getDay();
+
+var daylist = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+console.log("Today is: " + daylist[day] + ".");
+
+var hour = today.getHours();
+var minute = today.getMinutes();
+var second = today.getSeconds();
+
+var prepand = (hour >= 12) ? " PM " : " AM ";
+
+hour = (hour >= 12) ? hour - 12 : hour;
+
+if (hour === 0 && prepand === ' PM ') {
+    if (minute === 0 && second === 0) {
+        hour = 12;
+        prepand = ' Noon';
+    } else {
+        hour = 12;
+        prepand = ' PM';
     }
-
-    if(z>max_val){
-        max_val = z
-    }
-
-    return max_val;
 }
 
-console.log(max_value(1, 0, 1))
-console.log(max_value(0, -10, -20))
-console.log(max_value(1000,510,440))
+if (hour === 0 && prepand === ' AM ') {
+    if (minute === 0 && second === 0) {
+        hour = 12;
+        prepand = ' Midnight';
+    } else {
+        hour = 12;
+        prepand = ' AM';
+    }
+}
+
+console.log("Current Time: " + hour + prepand + " : " + minute + " : " + second); 
